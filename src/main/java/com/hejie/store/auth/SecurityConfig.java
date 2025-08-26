@@ -55,6 +55,7 @@ public class SecurityConfig {
             .sessionManagement(c ->
                     c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .csrf(AbstractHttpConfigurer::disable)
+            .cors(cors -> {} ) // enable CORS
             .authorizeHttpRequests(c -> {
                     featureSecurityRules.forEach(r -> r.configure(c));
                     c.anyRequest().authenticated();
