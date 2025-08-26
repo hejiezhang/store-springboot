@@ -1,13 +1,14 @@
-# Spring Boot: Mastering REST API Development
+# Backend E-commerce Application
 
-This repository contains the **completed code** for [Part 2 of my Spring Boot course](https://codewithmosh.com/p/spring-boot-building-apis).
 
-In this project, we build the backend for an e-commerce application using Spring Boot. The API includes endpoints for:
+In this project, I build the backend for an e-commerce application using Spring Boot. The API includes endpoints for:
 
 - Managing products
 - Managing shopping carts
 - Checking out
 - Viewing order history
+
+The technologies used in this project include: Spring Boot, Spring MVC, RESTful API, Spring Security, Spring Data JPA, Stripe.
 
 ---
 
@@ -16,8 +17,8 @@ In this project, we build the backend for an e-commerce application using Spring
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/mosh-hamedani/spring-api-finished.git
-cd spring-api-finished
+git clone https://github.com/hejiezhang/store-springboot.git
+cd store-springboot
 ```
 
 ### 2. Configure Environment Variables
@@ -26,13 +27,8 @@ cd spring-api-finished
 
 #### JWT_SECRET
 
-Generate a secure random key using:
+Require a secret key of at least 256 bits (32 bytes). Using a shorter key can cause errors.
 
-```bash
-openssl rand -base64 32
-```
-
-If ``openssl`` is not available, go to [generate-random.org](https://generate-random.org), click on **Strings > API Tokens**, and generate a secure token.
 
 #### STRIPE_SECRET_KEY
 
@@ -95,7 +91,7 @@ Here's a sample flow to help you understand how to interact with the API after s
 GET /products
 ```
 
-The database is automatically populated with 10 sample products using a Flyway migration script.
+This will return all products from the database.
 
 ### 2. Create a Shopping Cart 
 
@@ -195,8 +191,3 @@ POST /checkout/webhook
 Our backend listens for this event and updates the order status in the database accordingly.
 
 ---
-
-## 🧠 Learn More
-Want to learn how this project was built step by step?
-
-Check out the full course here: [Spring Boot: Mastering REST API Development](https://codewithmosh.com/p/spring-boot-building-apis)
