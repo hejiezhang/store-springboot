@@ -5,4 +5,4 @@ spring:
     password: root
   jpa:
     show-sql: true
-websiteUrl: http://localhost:4242
+websiteUrl: ${WEBSITE_URL}
